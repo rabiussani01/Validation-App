@@ -1,0 +1,70 @@
+<!-- 
+*****************************************************
+*   🌟 Title: Validation App                           *
+*   ✍️ Author: Mohammad Rabius Sai                     *
+*   📝 Description: This is a simple web application   *
+*                  for validating email addresses,     *
+*                  phone numbers, and postcodes using  *
+*                  HTML, JavaScript, and Tailwind CSS. *
+*                  It provides a user-friendly         *
+*                  interface for selecting the         *
+*                  validation type and entering a      *
+*                  value to validate.                  *
+*   📅 Date: 2023-09-23                                *
+*   📋 Language: HTML, JavaScript, Tailwind CSS        *
+*   ©️ Copyright: Mohammad Rabius Sai 📅 2023          *
+*****************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-cover bg-center bg-fixed flex justify-center pt-40 bg-opacity-75" style="background-image: url('img/bg1.jpg');">
+    <div class="bg-black p-10 rounded-lg shadow-lg">
+        <h1 class="text-4xl mb-4 text-center text-white font-bold pb-4">Validation App</h1>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Select Validation Type:</label>
+            <select id="validationType" class="border rounded p-2 w-full">
+                <option value="" class="text-opacity-60" selected>Select an option</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone Number</option>
+                <option value="postcode">Post Code</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Enter Value:</label>
+            <input id="inputValue" type="text" class="border rounded p-2 w-full" placeholder="Enter value to validate">
+        </div>
+
+        <div id="validationWarning" class="text-red-500 mb-4 hidden">Please select a validation type.</div>
+
+        <button id="validateButton" class="bg-blue-500 text-white rounded px-4 py-2 mx-auto block">Validate</button>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="fixed top-0 left-0 right-0 bottom-0 flex items-center text-center text-white justify-center hidden">
+        <div class="fixed inset-0 flex items-center justify-center z-50">
+            <!-- Background overlay with blur effect -->
+            <div class="absolute inset-0 bg-gray-500 opacity-50 blur-md"></div>
+
+            <!-- Modal content -->
+            <div class="bg-black blur-sm p-8 rounded-lg shadow-lg w-auto z-50 border-2 border-green-300">
+                <h2 class="text-2xl font-semibold mb-4 text-white text-center">Validation Result</h2> <hr class="pt-5">
+                <p id="resultMessage" class="text-lg"></p>
+                <div class="pt-5">
+                    <button id="closeModalButton" class="bg-blue-500 text-white rounded px-4 py-2 mt-4">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
